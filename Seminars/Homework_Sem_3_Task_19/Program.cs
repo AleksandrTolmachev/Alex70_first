@@ -6,17 +6,20 @@
 12821 -> да
 23432 -> да
 */
+
+int i, remain = 0, newNumber = 0;
 Console.WriteLine("Введите пятизначное число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-int result1 = number / 10000;
-int result2 = number % 10;
-int result3 = (number / 100) % 10;
-int result4 = (number / 1000) % 10;
-if (result1 == result2 && result3 == result4)
+int number = Convert.ToInt32((Console.ReadLine()));
+for (i = number; i > 0; i = (i / 10))
 {
-    Console.WriteLine("Палиндром!");
+    remain = i % 10;
+    newNumber = (newNumber * 10) + remain;
+}
+if (newNumber == number)
+{
+    Console.WriteLine($"Число {number} является палиндромом!", number);
 }
 else
 {
-    Console.WriteLine("Не палиндром!");
+    Console.WriteLine($"Число {number} не является палиндромом!");
 }
