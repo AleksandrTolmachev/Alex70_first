@@ -26,10 +26,10 @@ int[] tableQuarterNumber(int number)
 }
 int[] table = tableQuarterNumber(number);
 
-//for (int i = 0; i < table.Length; i++)
-//{
+// for (int i = 0; i < table.Length; i++)
+// {
 //    Console.Write(table[i] + "; ");
-//}
+// }
 
 foreach (var value in table )
 {
