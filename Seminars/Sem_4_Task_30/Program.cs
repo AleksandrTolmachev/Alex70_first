@@ -6,12 +6,10 @@
 Console.Write("Введите число элементов в массиве: ");
 int length = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[length];
-Console.Write($"Массив из {length} элементов: ");
-for (int i = 0; i < length; i++)
+Console.Write($"Массив из {length} элементов: [");
+for (int i = 0; i <= length - 1; i++)
 {
     array[i] = new Random().Next(0, 2);
     Console.Write($"{array[i]}, ");
 }
-
-
-//Console.Write($" Массив из 8 элементов: [{array}, ]");
+Console.Write("]");
