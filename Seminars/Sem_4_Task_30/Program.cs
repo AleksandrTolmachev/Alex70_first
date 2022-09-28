@@ -7,9 +7,15 @@ Console.Write("Введите число элементов в массиве: "
 int length = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[length];
 Console.Write($"Массив из {length} элементов: [");
-for (int i = 0; i <= length - 1; i++)
-{
-    array[i] = new Random().Next(0, 2);
-    Console.Write($"{array[i]}, ");
-}
+for (int i = 0; i < length; i++)
+    if (i < length - 1)
+    {
+        array[i] = new Random().Next(0, 2);
+        Console.Write($"{array[i]}, ");
+    }
+    else
+    {
+        array[i] = new Random().Next(0, 2);
+        Console.Write($"{array[i]}");
+    }
 Console.Write("]");
