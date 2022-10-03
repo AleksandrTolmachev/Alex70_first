@@ -23,13 +23,13 @@ void getPrint(string Text, ConsoleColor color)
 int getSumOddArrayElements(int[] sumOddArrayElements)
 {
     int sumOdd = 0;
-    for (int i = 0; i <= (sumOddArrayElements.Length); i++)
+    for (int i = 0; i <= (sumOddArrayElements.Length - 1); i++)
     {
-        if (i == 0 && i % 2 == 0)
+        if (i == 0 || i % 2 == 0) //i == 0 || i % 2 == 0     i == 0 && i % 2 == 0
         {
             i++;
         }
-        if (i == 1 && i % 2 != 0)
+        if (i == 1 || i % 2 != 0)
         {
             sumOdd = sumOdd + sumOddArrayElements[i];
         }
