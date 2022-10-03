@@ -12,7 +12,7 @@ Random random = new Random();
 for (int i = 0; i < arrayLength; i++)
 {
     diffMaxMinArray[i] = random.NextDouble() * 100;
-    Console.Write("{0,6:F1}; ", diffMaxMinArray[i]);
+    Console.Write($" {diffMaxMinArray[i]:F1}; ");
 }
 Console.Write($"]");
 Console.WriteLine();
@@ -29,19 +29,29 @@ else
     maxNumber = diffMaxMinArray[0];
     minNumber = diffMaxMinArray[1];
 }
-
-// for (int i = 0; i < arrayLength; i++)
-// {
-//     diffMaxMinArray[0] = diffMaxMinArray[i + 1];
-//     if (diffMaxMinArray[i + 1] > maxNumber)
-//     {
-//         maxNumber = diffMaxMinArray[i + 1];
-//     }
-//     minNumber = diffMaxMinArray[i + 1];
-// }
-// return maxNumber;
-// return minNumber;
-// Console.WriteLine();
+if (diffMaxMinArray[2] > maxNumber)
+{
+    maxNumber = diffMaxMinArray[2];
+}
+if (diffMaxMinArray[2] < minNumber)
+{
+    minNumber = diffMaxMinArray[2];
+}
+if (diffMaxMinArray[3] > maxNumber)
+{
+    maxNumber = diffMaxMinArray[3];
+}
+if (diffMaxMinArray[3] < minNumber)
+{
+    minNumber = diffMaxMinArray[3];
+}
+if (diffMaxMinArray[4] > maxNumber)
+{
+    maxNumber = diffMaxMinArray[4];
+}
+if (diffMaxMinArray[4] < minNumber)
+{
+    minNumber = diffMaxMinArray[4];
+}
 double diffMaxMinNumber = maxNumber - minNumber;
-Console.Write($"Разница между максимальным и минимальным элементами массива равна: ");
-Console.Write("{0,6:F1} ", diffMaxMinNumber);
+Console.Write($"Разница между максимальным ({maxNumber:F1}) и минимальным ({minNumber:F1}) элементами массива равна: ({diffMaxMinNumber:F1}) ");
