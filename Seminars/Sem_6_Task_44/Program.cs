@@ -11,26 +11,18 @@ int FirstFibonacciNumbers(int userNumber)
     int numFib1 = 0;
     int numFib2 = 1;
     int numFib3 = 0;
-    for (int i = 0; i < userNumber; i++);
+    for (int i = 2; i < userNumber; i++)
     {
         numFib3 = numFib1 + numFib2;
-        Console.Write($"{numFib3}, ");
+        Console.Write($"{numFib3} ");
         numFib1 = numFib2;
         numFib2 = numFib3;
-    }
-    return numFib3;
-}
-
-void printFibonacci(int numToPrint)
-{
-    for (int i = 0; i < numToPrint; i++)
-    {
-        Console.Write(numToPrint);
-        if (i < numToPrint - 1)
+        if (i < userNumber - 1)
         {
             Console.Write(",");
         }
     }
+    return numFib3;
 }
 
 int numFib1 = 0;
@@ -39,4 +31,3 @@ Console.Write("Введите завершающий порядковый ном
 int numberN = Convert.ToInt32(Console.ReadLine());
 Console.Write($"Ряд Фибоначи от {numFib1} до {numberN} включает: {numFib1}, {numFib2}, ");
 int RowFibonacciNumbers = FirstFibonacciNumbers(numberN);
-printFibonacci(RowFibonacciNumbers);
