@@ -5,59 +5,49 @@
 [1 2 3 4 5] -> 5 8 3
 [6 7 3 6] -> 36 21
 */
-void PrintArray(int[] array)
+int[] generateArray(int length, int start, int end)
 {
-    Console.Write("[");
-    for (int i = 0; i < array.Length - 1; i++)
+    int[] array = new int[length];
+    for (int i = 0; i < length; i++)
     {
-        Console.Write($"{array[i]},");
+        array[i] = new Random().Next(start, end + 1);
     }
-    Console.Write($"{array[array.Length - 1]}");
-    Console.Write("]");
+    return array;
 }
-void getPrint(string Text, ConsoleColor color)
+void printArray(int[] arrayToPrint, string name)
 {
-    Console.ForegroundColor = color;
-    Console.Write(Text);
-    Console.ResetColor();
+    System.Console.WriteLine($"-------------------{name}-------------------");
+    Console.Write("[");
+    for (int i = 0; i < arrayToPrint.Length; i++)
+    {
+        Console.Write(arrayToPrint[i]);
+        if (i < arrayToPrint.Length - 1)
+        {
+            Console.Write(",");
+        }
+    }
+    Console.WriteLine("]");
+    Console.WriteLine();
 }
-
-// int i, remain = 0, newNumber = 0;
-// Console.WriteLine("Введите пятизначное число: ");
-// int number = Convert.ToInt32((Console.ReadLine()));
-// for (i = number; i > 0; i = (i / 10))
-// {
-//     remain = i % 10;
-//     newNumber = (newNumber * 10) + remain;
-// }
-// if (newNumber == number)
-// {
-//     Console.WriteLine($"Число {number} является палиндромом!", number);
-// }
-// else
-// {
-//     Console.WriteLine($"Число {number} не является палиндромом!");
-// }
-Console.Write("Введите желаемую длину массива: ");
-int userNumber = Convert.ToInt32(Console.ReadLine());
-getPrint("Задайте минимальный диапазон значений в массиве: ", ConsoleColor.Blue);
-int MinMeaning = Convert.ToInt32(Console.ReadLine());
-getPrint("Задайте максимальный диапазон значений в массиве: ", ConsoleColor.Blue);
-int MaxMeaning = Convert.ToInt32(Console.ReadLine());
-int[] arrayNorm = new int[userNumber];
-for (int i = 0; i < userNumber; i++)
+int[] multiplyOfBorderElementsOfArray(int[] inputArray)
 {
-    arrayNorm[i] = new Random().Next(MinMeaning, MaxMeaning + 1);
+    int lengthOfNewArray = (int)Math.Ceiling(inputArray.Length / 2.0);
+    Console.WriteLine($"Для количества {inputArray.Length} в новый массив {lengthOfNewArray}");
+    int[] result = new int[lengthOfNewArray];
+    for (int i = 0; i < lengthOfNewArray; i++)
+    {
+        if (i != inputArray.Length - i - 1)
+        {
+            result[i] = inputArray[i] * inputArray[inputArray.Length - i - 1];
+        }
+        else
+        {
+            result[i] = inputArray[i];
+        }
+    }
+    return result;
 }
-// int[] arrayReversed = new int[userNumber];
-// int remain = 0;
-// arrayReversed[] = 0;
-// for (i = 0; i < arrayNorm.length; i = (i / 10))
-// {
-//     remain = i % 10;
-//     arrayReversed[i] = (arrayReversed * 10) + remain;;
-// }
-Console.Write($"Задан массив: ");
-PrintArray(arrayNorm);
-// PrintArray(arrayReversed);
-// Console.WriteLine($". Сумма нечётных элементов массива равна {getSumOddArrayElements(sumOddArrayElements)}!");
+int[] currentArray = generateArray(9, 1, 10);
+printArray(currentArray, "Исходный");
+int[] multiplyArray = multiplyOfBorderElementsOfArray(currentArray);
+printArray(multiplyArray, "Результат");
