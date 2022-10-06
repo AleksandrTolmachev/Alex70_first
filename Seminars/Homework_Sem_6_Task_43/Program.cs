@@ -14,7 +14,7 @@ double argumentb2 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Ведите значение постоянного аргумента уравнений k2 = ");
 double argumentk2 = Convert.ToInt32(Console.ReadLine());
 
-double variableX = Math.Sign(Math.Round((argumentb2 - argumentb1) / (argumentk1 - argumentk2), 1));
-double variableY = Math.Sign(Math.Round((argumentk1 * variableX) + argumentb1, 1));
+double variableX = Math.Round((argumentb2 - argumentb1) / (argumentk1 - argumentk2), 1);
+double variableY = Math.Round((argumentk1 * variableX) + argumentb1, 1);
 Console.WriteLine($"Координаты пересечения прямых равны: ({variableX:F1}; {variableY:F1})");
 
