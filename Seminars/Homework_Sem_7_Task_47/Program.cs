@@ -5,15 +5,14 @@ m = 3, n = 4.
 1 -3,3 8 -9,9
 8 7,8 -7,1 9
 */
-double[,] generateRealArray(int height, int width, double randomStart, double randomEnd)
+double[,] generateRealArray(int height, int width, int randomStart, int randomEnd)
 {
     double[,] RealArray = new double[height, width];
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            //RealArray[i, j] = new Random().NextDouble() * 10;
-            RealArray[i, j] = new Random().NextDouble(randomStart * 10, (randomEnd + 1) * 10);
+            RealArray[i, j] = Convert.ToDouble(new Random().Next(randomStart, randomEnd + 1) / 10.0);
         }
     }
     return RealArray;
@@ -43,5 +42,5 @@ void printRealArray(double[,] arrayToPrint)
     }
 }
 
-double[,] generatedArray = generateRealArray(3, 4, -10, 10);
+double[,] generatedArray = generateRealArray(3, 4, -100, 100);
 printRealArray(generatedArray);
