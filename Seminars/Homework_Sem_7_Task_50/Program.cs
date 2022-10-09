@@ -51,22 +51,19 @@ void print2DArray(int[,] arrayToPrint)
         Console.WriteLine();
     }
 }
+Console.Write("Введите номер позиции элемента массива, который необходимо показать: ");
+int element = Convert.ToInt32(Console.ReadLine());
 
 int[,] generatedArray = generate2DArray(3, 4, 1, 10);
 print2DArray(generatedArray);
+int n = element / generatedArray.GetLength(1);
+int m = element - (n * generatedArray.GetLength(1));
 
-int[] generatedArrayZ = new int[12];
-int z = 0;
-for (int i = 0; i < generatedArray.GetLength(0); i++)
+if (n >= generatedArray.GetLength(0) || m >= generatedArray.GetLength(1))
 {
-    for (int j = 0; j < generatedArray.GetLength(1); j++)
-    {
-        generatedArrayZ[z] = generatedArray[i, j];
-        z++;
-    }
+    Console.WriteLine("Такого элемента в массиве нет!");
 }
-Console.Write($"Новый одномерный массив ({generatedArrayZ[z]}, )");
-
-// Console.Write("Введите номер позиции элемента массива, который необходимо показать: ");
-// int element = Convert.ToInt32(Console.ReadLine());
-// Console.Write($"На позиции {element} находится {generatedArrayZ.GetValue(element)}! ");
+else
+{
+    Console.WriteLine($"Значение элемента {element} равно {generatedArray[n, m]}");
+}
