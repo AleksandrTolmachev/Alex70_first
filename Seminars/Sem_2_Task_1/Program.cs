@@ -25,7 +25,7 @@ int getMaxDigitFromNumber(int number)
     return maxDigit;
 }
 
-int randomNumber = getRandomNumberFromRange(10, 99);
+int randomNumber = getRandomNumberFromRange(100, 9999);
 Console.WriteLine($" Случайное значение: {randomNumber}");
 int maxDigit = getMaxDigitFromNumber(randomNumber);
 Console.WriteLine($"Для числа {randomNumber} большая цифра {maxDigit} ");
