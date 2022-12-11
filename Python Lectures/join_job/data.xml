@@ -1,0 +1,5 @@
+<xml>
+   <temperature units = "c">-5</temperature>
+   <wind_speed units = "m/s">21</wind_speed>
+   <pressure units = "mmHg">732</pressure>
+</xml>
