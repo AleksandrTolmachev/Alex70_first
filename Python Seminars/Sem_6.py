@@ -8,10 +8,57 @@
 # Вывод:
 # Москва,-,Вологда,-,Владивосток,Хабаровск
 
-list = 'Москва,Уфа,Вологда,Тула,Владивосток,Хабаровск'.split(',')
-# print(map(lambda x : 1 if len(list) <= 5 in x else 0, list))
-print(list)
-for i in range(len(list)):
-    if len(list[i]) <= 5:
-        list[i] = '-'
-print(','.join(list))
+# list = 'Москва,Уфа,Вологда,Тула,Владивосток,Хабаровск'.split(',')
+# print(list)
+# for i in range(len(list)):
+#     if len(list[i]) <= 5:
+#         list[i] = '-'
+# print(','.join(list))
+
+# citys = 'Москва,Уфа,Вологда,Тула,Владивосток,Хабаровск'
+# print(citys) 
+# a = list(map((lambda x: x if len(x) > 5 else '-'), citys.split(','))) 
+# print(','.join(a))
+
+# Задача 2.
+# На вход программы поступает строка в формате:
+# ключ_1=значение_1 ключ_2=значение_2 ... ключ_N=значение_N
+# Необходимо с помощью функции map преобразовать ее в кортеж tp вида:
+# tp = (('ключ_1', 'значение_1'), ('ключ_2', 'значение_2'), ..., ('ключ_N', 'значение_N'))
+
+# Ввод:
+# house=дом car=машина men=человек tree=дерево
+# Вывод:
+# (('house', 'дом'), ('car', 'машина'), ('men', 'человек'), ('tree', 'дерево'))
+
+# c = 'house=дом car=машина men=человек tree=дерево'
+# print(c) 
+# ListC = c.split(' ')
+# print(ListC)
+
+# a = {'house': 'дом', 'car': 'машина', 'men': 'человек', 'tree': 'дерево'} 
+# b = list(a.items()) 
+# print(b) 
+
+# d = tuple(map(lambda x: tuple(x.split('=')), ListC)) 
+# print(d)
+
+# a = 'house=дом car=машина men=человек tree=дерево'.split() 
+# a = tuple(map(lambda x: tuple(x.split('=')),a)) 
+# print(a)
+
+L = [1, 2, 3, 4, 5]
+print(L)
+print(list(map(lambda x: x**2, L)))
+
+squares = [n*n for n in L]
+print(squares)
+# [1, 4, 9, 16, 25] 
+
+odd_squares = [n*n for n in L if n%2 == 1]
+print(odd_squares)
+# [1, 9, 25]
+
+matrix = [[x for x in range(1, 4)] for y in range(1, 4)]
+print(matrix)
+# [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
