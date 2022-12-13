@@ -23,5 +23,9 @@ n = int(input('Введите число N - количество элемент
 randList = ([random.randint(0, 9) for i in range(n)])
 print(randList)
 j = (len(randList)//2 + 1 if len(randList) % 2 != 0 else (len(randList)//2))
-newList = [randList[i]*randList[len(randList)-i-1] for i in range(j)]
+# newList = [randList[i]*randList[len(randList)-i-1] for i in range(j)]
+
+x = lambda i: randList[i] * randList[len(randList)-i-1]
+newList = (x for i in range(j))
+
 print(f'Список произведений пар: {newList}')
