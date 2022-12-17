@@ -1,11 +1,28 @@
-from view import get_info
+from logger import import_data
+from logger import export_data
+from view import print_data
+from view import input_data
+from model import search_data
 
-info = get_info()
 
-def writing_txt():
-    with open('Alex70_first/Python Seminars/Homework_Sem7/phonebook.txt', 'a', encoding='utf-8') as line:
-        line.write(f'{str(info[0])} // {str(info[1])} \n')
+def choice_sep():
+    sep = input("Введите разделитель: ")
+    if sep == "":
+        sep = None
+    return sep
 
-def writing_csv():
-    with open('Alex70_first/Python Seminars/Homework_Sem7/phonebook.csv', 'a', encoding = 'utf-8') as line:
-        line.write(f'{str(info[0])} // {str(info[1])} \n')
+
+def choice_todo():
+    print("Доступные операции с телефонной книгой:\n\
+    1 - импорт;\n\
+    2 - поиск контакта.")
+    num = input("Введите цифру: ")
+    if num == '1':
+        sep = choice_sep()
+        contact = input_data()
+        import_data(contact, sep)
+    elif num == '2':
+        word = input("Введите данные для поиска: ")
+        base = export_data()
+        results = search_data(word, base)
+        print_data(results)
