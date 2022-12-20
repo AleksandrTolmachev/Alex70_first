@@ -35,12 +35,12 @@
 # print(roots)
 
 
-# import math                 # вариант 2
-# a = float(input('a '))
-# b = float(input('b '))
-# c = float(input('c '))
-# discr = b**2 - 4*a*c
-# print(discr)
+import math                 # вариант 2
+a = float(input('a '))
+b = float(input('b '))
+c = float(input('c '))
+discr = b**2 - 4*a*c
+print(discr)
 
 
 # x1 = (-b + (discr)**0.5) / (2 * a)
@@ -53,15 +53,15 @@
 # *' 7 11 -> 77
 # *' 6 8 -> 24
 
-a = int(input('Введите первое число: '))
-b = int(input('Введите второе число: '))
-max_val = a if a > b else b
-count = 1
-while True:
-    if (max_val // a == max_val / a) and (max_val // b == max_val / b):
-        print(max_val)
-        break
-    else:
-        count += 1
-        max_val = a if a > b else b
-        max_val *= count
+# a = int(input('Введите первое число: '))
+# b = int(input('Введите второе число: '))
+# max_val = a if a > b else b
+# count = 1
+# while True:
+#     if (max_val // a == max_val / a) and (max_val // b == max_val / b):
+#         print(max_val)
+#         break
+#     else:
+#         count += 1
+#         max_val = a if a > b else b
+#         max_val *= count
