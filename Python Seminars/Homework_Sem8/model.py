@@ -12,8 +12,8 @@ def execute_expr(expr: str) -> str:         # (5+3)*10 -> 80
 def solve_eq(expr: str) -> str:                         # x**3 - 8 = 0 -> "2"                                         
     """Принимает на вход уравнение в виде строки.       
     Возвращает список корней уравнения в строку с разделителем""" 
-    x = sympy.symbols('x', real=True)                             # x**2 - 1 = 0 -> "1,-1"
-    roots = sympy.solve((expr, 0), x)
+    x = sympy.Symbol('x')                     # x**2 - 1 = 0 -> "1,-1"
+    roots = sympy.solve(expr, x)
     return roots
     
 
