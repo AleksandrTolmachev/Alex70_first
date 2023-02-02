@@ -1,0 +1,17 @@
+html {
+    background-color: rgb(96, 211, 226);
+}
+h2 {
+    color: rgb(231, 187, 42);
+}
+a {
+    color: green;
+}
+.div1 .div2 {
+    background-color: black;
+    width: 100px;
+    height: 100px;
+}
+p {
+    margin: 2px;
+}
