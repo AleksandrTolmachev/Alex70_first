@@ -1,3 +1,20 @@
+<?php
+$skills = [
+        'skill_name' => ['Экономический анализ', 'Фотография', 'Финансы', 'Управление командой'],
+        'level' => [95, 70, 70, 80]
+    ]
+?>
+<?php
+$exp = [
+        'job_title' => ['Начальник отдела бюджетного контроля', 'Начальник планово-финансового отдела', 'Начальник планово-экономического отдела'],
+        'period' => ['Окт 2020 - Мар 2022', 'Янв 2011 - Окт 2020', 'Фев 2010 - Янв 2011'],
+        'funct_resp' => ['Формирование, корректировка, исполнение и анализ показателей выполнения Бюджета САРЕХ.', 
+        'Формирование Бюджета операционных расходов, контроль и постатейный факторный анализ отклонений исполнения Бюджета, 
+        контроль себестоимости переработки нефтепродуктов; формирование консолидированного Бюджета (включая CAPEX).', 
+        'Формирование, контроль и факторный анализ исполнения операционного Бюджета.']
+    ]
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -43,42 +60,23 @@
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><?php 
               echo "E-mail: atolmachev70@mail.ru" 
               ?></p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>Телефон</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+7(921)78-46-393</p>
+          <p><i class="fa fa-hourglass-half fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo (2023-1970) ?> года (<?php echo ((2023-1970)*365) ?> дней)</p>
           <hr>
 
           <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Навыки</b></p>
-          <p>Adobe Photoshop</p>
+          <?php for($i=0; $i<count($skills['skill_name']); $i++) {?>
+          <p><?php echo $skills['skill_name'][$i] ?></p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
-          </div>
-          <p>Photography</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $skills['level'][$i] ?>%"><?php echo $skills['level'][$i] ?>%</div>
             </div>
-          </div>
-          <p>Illustrator</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-          </div>
-          <p>Media</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-          </div>
+          <?php } ?>
           <br>
 
           <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Языки</b></p>
           <p>Английский</p>
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
-          </div>
-          <p>Испанский</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
-          </div>
-          <p>Немецкий</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:50%"></div>
           </div>
           <br>
         </div>
@@ -92,24 +90,17 @@
     
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Опыт работы</h2>
+        <?php for($i=0; $i<count($exp['job_title']); $i++) {?>
+
+            
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Front End Developer </b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <h5 class="w3-opacity"><b><?php echo $exp['job_title'][$i] ?></b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><?php echo $exp['period'][$i] ?></h6>
+          <p><?php echo $exp['funct_resp'][$i] ?></p>
+        </div>
+        <?php } ?>
           <hr>
         </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
-          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
-        </div>
-      </div>
 
       <div class="w3-container w3-card w3-white">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Образование</h2>
@@ -131,7 +122,6 @@
           <p>Bachelor Degree</p><br>
         </div>
       </div>
-
     <!-- End Right Column -->
     </div>
     

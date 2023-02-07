@@ -1,3 +1,17 @@
+<?php
+$name = 'Иннокентий'; // строка
+$city = 'Москва, Россия'; // строка
+$profi = 'Дизайнер'; // строка
+$email = 'email@email.com'; // строка
+$phone = 89037778866; // десятичное число
+$age = 2022-1985;
+$days = (2022-1985)*365;
+$skills = [
+        'skill_name' => ['Adobe Photoshop', 'Фотография', 'Illustrator', 'Копирайтинг'],
+        'level' => [97, 83, 70, 80]
+    ]
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=qFj9hzYWJ_3VkYlMPv8b1WpPqzvLvD4Jh1tcEm_Yjeg9QrIbwLG1a5tL14djMYVdhidINMn0diFaM96PmdnOtncmpL78nFb7ktr8jxb-tPfWYCmzYsqxtp6ZviTr_iDeGGP8X1Q5Gd790Vjr8sDTP4oo1QOCQVoE5fbyizb5Tv-GsmTe_QpDdDKDdeZAyGC8u0tVTw62fEEd4zPg0gvYKoIfkwXPClkxt5bX30dnnHfxWzOfULUVNMURl4kRxzdCMatqPsNRLw7cgzNVSQlVbmXthPd0Q1NiGTRCZUoQWzmaJWjYh0O-SfGnqVl7YErMONpOt-A0S1qMcu73Of1U-Vq4J4a45X9zq5nI5J9IHL8Jb3TQ5zPpI7MiLqIIjLvzAxHNJx58UDvZuNVPneATFpeWGnwBnTYhXaUi8yEfRU94PmuzveLQnoka6tvFSqWr8olNMVQC8c-AIqsJcV7vrkNoGmofPDuk9W6PP1pifm7OCrIH67ObjZL5ch2P2KP183roVtfGYLotApbrYZUhDxT1ei98t5Nws6wCmuRs_FedneuD3wIu-qo4-M0_nLchNMKWWlFSb3PvzgHWUtcYpyTyXAAuF_feh_yLt15FxOnkoBrOt79GU6BiReKcS2Cle6pAtRcbmvLKWS9cJ6sDCiBruzf5AaK49Yi1IQdnS7aK9UuNCBW571RlikuRx0oKhC_75eOklmSFTk82_lGSWtnOxupjYe5uRio5pPECerbYcCeuoM8_qBevm2fWKXFPLDTJu42VVW1lnBX9UzzkT-CbHdKs2Ro6qWcPQZRR7M2yoLyiHlmDztx7281uISqvUWYYLTWritoZH4n4CKGfQYEw-f87EKdLKOxleTOUBXis4NVRW6VWggdTz8d9gIuEwThrdQcMgcFLZRm1pynz1yEDo8Xm0H6DasFWPso0BefIacoqT-rKfPQqSiEmC5ZlMBhUmY_IqvWlUzZ84eBd9aOCGjGgKCHvJSNrKLCEywkl0eFJY6cyYc5Agfv1ldpQgnqk8AuJbKv3bw3Bcj2B5PnrCPSWNaxqxd1o6xyodTU" charset="UTF-8"></script><style>
+    <style>
     html,body,h1,h2,h3,h4,h5,h6 {font-family: 'Jost', sans-serif;}
     </style>
   </head>
@@ -28,42 +42,45 @@
         <div class="w3-display-container">
           <img src="https://imgfon.ru/Images/Details_img_880px/Animals/glaza-belyy_fon-kotik-morda-polosatyy.webp" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>
-              <?php echo "Александр" ?>
-            </h2>
+            <h2><?php echo $name; ?></h2>
+            
           </div>
         </div>
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><?php 
-              echo "Экономист" 
-              ?></p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><?php 
-              echo "Санкт-Петербург, Россия" 
-              ?></p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><?php 
-              echo "E-mail: atolmachev70@mail.ru" 
-              ?></p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>Телефон</p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $profi; ?></p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $city ?></p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $email ?></p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $phone ?></p>
+          <p><i class="fa fa-hourglass-half fa-fw w3-margin-right w3-large w3-text-teal"></i><?php echo $age ?> лет (<?php echo $days ?> дней)</p>
           <hr>
 
           <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Навыки</b></p>
-          <p>Adobe Photoshop</p>
+          <?php for($i=0; $i<count($skills['skill_name']); $i++) {?>
+          <p><?php echo $skills['skill_name'][$i] ?></p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+            <div-class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $skills['level'][$i] ?>%"><?php echo $skills['level'][$i] ?>%</div>
+            </div>
+          <?php } ?>
+          <br>
+
+
+          <p><?php echo $skills['skill_name'][0]; ?></p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $skills['level'][0]; ?>%"><?php echo $skills['level'][0]; ?>%</div>
           </div>
-          <p>Photography</p>
+          <p><?php echo $skills['skill_name'][1]; ?></p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $skills['level'][1]; ?>%">
+              <div class="w3-center w3-text-white"><?php echo $skills['level'][1]; ?>%</div>
             </div>
           </div>
-          <p>Illustrator</p>
+          <p><?php echo $skills['skill_name'][2]; ?></p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $skills['level'][2]; ?>%"><?php echo $skills['level'][2]; ?>%</div>
           </div>
-          <p>Media</p>
+          <p><?php echo $skills['skill_name'][3]; ?></p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $skills['level'][3]; ?>%"><?php echo $skills['level'][3]; ?>%</div>
           </div>
           <br>
 
